@@ -1,0 +1,14 @@
+{
+    "login_credentials1": {
+        "email" : "sunilkumardharmana4@gmail.com" ,
+    "password"  : "9989301761"
+    },
+    "login_credentials2": {
+        "email" : "sunilkumardharmana5@gmail.com" ,
+        "password"  : "9989301761"
+    },
+    "login_credentials3": {
+       "email" : "sunilkumardharmana6@gmail.com" ,
+        "password"  : "9989301761"
+    }
+}
