@@ -60,6 +60,7 @@ def pytest_runtest_makereport(item, call):
 
             # Screenshot on failure
             screenshot = page.screenshot()
+            
             allure.attach(
                 screenshot,
                 name="Failure Screenshot",
