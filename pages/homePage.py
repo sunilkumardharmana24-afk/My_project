@@ -1,6 +1,7 @@
 
 from playwright.sync_api import Page, expect
 import pytest
+import allure
 
 class SignUp:
     def __init__(self, page: Page):
@@ -31,7 +32,7 @@ class SignUp:
         self.logout_link = page.get_by_role("link", name="Logout")
 
         
-
+    @allure.step("Launching application URL")
     def launch_appURL(self, page: Page):
         page.goto("https://automationexercise.com/")
         expect(page).to_have_title("Automation Exercise")

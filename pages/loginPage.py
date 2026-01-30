@@ -1,6 +1,6 @@
 
 from playwright.sync_api import Page, expect
-import pytest
+import pytest , allure
 from pages.homePage import SignUp
 
 
@@ -12,7 +12,7 @@ class Login(SignUp):
         self.login_pwd = page.get_by_placeholder("Password")
         self.click_login = page.get_by_role("button", name="Login")
 
-
+    @allure.step("User login with email and password")
     def user_login(self , page : Page , email , password):
         signupPage1 = SignUp(page)
         signupPage1.launch_appURL(page)

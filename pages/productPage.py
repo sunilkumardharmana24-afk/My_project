@@ -1,6 +1,6 @@
 from playwright.sync_api import Page, expect
 import pytest
-
+import allure
 
 
 class Products:
@@ -13,7 +13,7 @@ class Products:
         self.view_tshirt = page.locator("a[href='/product_details/2']")
         
         
-
+    @allure.step("Adding products to cart")
     def add_products_to_cart(self , page : Page):
         self.click_products.click()
         self.view_bluetop.click()

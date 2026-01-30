@@ -38,6 +38,32 @@ def carts_page(page):
 def payments_page(page):
     PaymentsPage1 = Payment(page)
     return PaymentsPage1    
-    
+
+
+import pytest
+import allure
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    """
+    Hook into pytest test execution.
+    This runs after each test phase (setup, call, teardown).
+    """
+    outcome = yield
+    report = outcome.get_result()
+
+    # Only act on test failures
+    if report.when == "call" and report.failed:
+        # Attach extra info to Allure report
+        if "page" in item.funcargs:  # Playwright page fixture
+            page = item.funcargs["page"]
+
+            # Screenshot on failure
+            screenshot = page.screenshot()
+            allure.attach(
+                screenshot,
+                name="Failure Screenshot",
+                attachment_type=allure.attachment_type.PNG
+            )
     
     
