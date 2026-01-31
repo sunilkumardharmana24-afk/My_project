@@ -37,4 +37,5 @@ def test_login_order(page: Page , sign_up ,login_page , products_page , carts_pa
     products_page.add_products_to_cart(page)
     carts_page.check_out(page)
     payments_page.order_payment(page)
+    print("Order placed successfully")
     expect(page.get_by_text("Congratulations! Your order has been confirmed!")).to_be_visible()
