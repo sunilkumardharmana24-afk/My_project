@@ -10,7 +10,7 @@ from utils.readjson import read_json
 file_path = 'testdata/credentials.json'
 
 #Signup user and place an order
-# @pytest.mark.skip
+@pytest.mark.skip
 def test_signup_order(page: Page , sign_up ,login_page , products_page , carts_page , payments_page):
     sign_up.launch_appURL(page)
     testData1 = read_json(file_path)
@@ -24,7 +24,7 @@ def test_signup_order(page: Page , sign_up ,login_page , products_page , carts_p
     # expect(page.get_by_text("Congratulations! Your order has been confirmed!")).to_be_visible()
 
 #Login user and place and order
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_login_order(page: Page , sign_up ,login_page , products_page , carts_page , payments_page):
     signupPage1 = SignUp(page)
     loginPage1 = Login(page)

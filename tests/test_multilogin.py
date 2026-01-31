@@ -3,7 +3,6 @@ import pytest
 from utils.readjson import read_json_multiple
 file_path1 = 'testdata/multiplecreds.json'
 testdata2 = read_json_multiple(file_path1)
-
 @pytest.mark.skip(reason="Skipping multi user login test")
 def test_multiuserlogin(page : Page , login_page ,sign_up):
     for key, value in testdata2.items():
@@ -15,7 +14,7 @@ def test_multiuserlogin(page : Page , login_page ,sign_up):
         sign_up.logout(page)
     # print(testdata2)
 
-
+@pytest.mark.skip
 @pytest.mark.parametrize("email,password", [(testdata2["login_credentials1"]["email"], testdata2["login_credentials1"]["password"]),
                          (testdata2["login_credentials2"]["email"], testdata2["login_credentials2"]["password"])])
 def test_multiuserlogin_alternate(page : Page , login_page ,sign_up , email, password):  

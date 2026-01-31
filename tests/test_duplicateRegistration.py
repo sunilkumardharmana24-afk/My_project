@@ -1,11 +1,10 @@
-
 from pages.homePage import SignUp
 from utils.readjson import read_json
 file_path = 'testdata/credentials.json'
 from playwright.sync_api import Page, expect
 import pytest
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_duplicate_registration(page : Page , sign_up , login_page):
     sign_up.launch_appURL(page)
     testData1 = read_json(file_path)

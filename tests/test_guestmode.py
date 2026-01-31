@@ -12,7 +12,7 @@ def test_addprodasguest(page : Page , sign_up , login_page , products_page):
     login_page.user_login(page , testData1["email"] , testData1["password"])
     page.screenshot(path="screenshots/guestmode_login.png")
 
-def test_addprodasguest(page : Page , sign_up , login_page , products_page):
+def test_veraddprodasguest(page : Page , sign_up , login_page , products_page):
     sign_up.launch_appURL(page)
     products_page.add_products_to_cart(page)
     testData1 = read_json(file_path)
