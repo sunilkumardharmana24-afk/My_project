@@ -5,8 +5,11 @@ on:
     branches: [ "main", "vscode" ]
   pull_request:
     branches: [ "main" ]
+  schedule:
+    - cron: '30 0 * * 0'  # Weekly on Sundays at midnight
 permissions:
   contents: write
+
 
 jobs:
   test:
